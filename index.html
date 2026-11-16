@@ -1,30 +1,25 @@
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Salisa Perfume - 50ml</title>
+<title>Salisa Perfume - Sky Fragrance</title>
 <style>
 body{font-family:Arial;background:#fdf2f8;margin:0;padding:15px}
-.box{background:white;border-radius:15px;padding:20px;max-width:400px;margin:auto;box-shadow:0 4px 10px #ccc;text-align:center}
+.box{background:white;border-radius:15px;padding:20px;max-width:400px;margin:auto;text-align:center}
 img{width:100%;border-radius:12px}
-h1{margin:10px 0 5px}
 .price{font-size:22px;color:#d81b60;font-weight:bold}
-.offer{background:#fff3cd;padding:10px;border-radius:10px;margin:10px 0;font-weight:bold;color:#856404}
-button{width:100%;padding:14px;font-size:18px;border:none;border-radius:10px;margin-top:8px;cursor:pointer}
-.btn-green{background:#25D366;color:white}
-.btn-dark{background:black;color:white}
+.offer{background:#fff3cd;padding:10px;border-radius:10px;margin:10px 0;font-weight:bold}
+button{width:100%;padding:14px;font-size:18px;border:none;border-radius:10px;margin-top:8px;background:#25D366;color:white}
 select{width:100%;padding:12px;font-size:16px;border-radius:10px;margin-top:10px}
 </style>
 </head>
 <body>
-
 <div class="box">
 <img src="salisa.jpg">
 <h1>Salisa Perfume</h1>
 <p>Premium Fragrance - 50ml Bottle</p>
-
-<div class="offer">🔥 SPECIAL OFFER: 1 Bottle = 1200 Rs<br>2 Bottles = 2000 Rs (400 Rs Bachat!)</div>
-
+<div class="offer">🔥 OFFER: 1 Bottle = 1200 Rs<br>2 Bottles = 2000 Rs (400 Rs Bachat!)</div>
 <label><b>Kitni Bottles Chahiye?</b></label>
 <select id="qty" onchange="updatePrice()">
 <option value="1">1 Bottle - 1200 Rs</option>
@@ -32,32 +27,14 @@ select{width:100%;padding:12px;font-size:16px;border-radius:10px;margin-top:10px
 <option value="3">3 Bottles - 3200 Rs</option>
 <option value="4">4 Bottles - 4000 Rs</option>
 </select>
-
 <p class="price" id="total">Total: 1200 Rs</p>
-<p>Payment: Cash on Delivery - Poore Pakistan me Delivery</p>
-
-<button class="btn-green" onclick="order()">WhatsApp Par Order Karen</button>
-<button class="btn-dark" onclick="order()">Call Karke Order Karen</button>
+<p>Payment: Cash on Delivery</p>
+<button onclick="order()">WhatsApp Par Order Karen</button>
 </div>
-
 <script>
-function getPrice(q){
-  if(q==1) return 1200;
-  if(q==2) return 2000;
-  if(q==3) return 3200;
-  if(q==4) return 4000;
-}
-function updatePrice(){
-  let q = document.getElementById("qty").value;
-  document.getElementById("total").innerText = "Total: " + getPrice(q) + " Rs";
-}
-function order(){
-  let q = document.getElementById("qty").value;
-  let p = getPrice(q);
-  let msg = "Assalam-o-Alaikum! Mujhe Salisa Perfume " + q + " Bottle chahiye. Total: " + p + " Rs. Mera Naam: , Mera Address: ";
-  window.open("https://wa.me/92XXXXXXXXXX?text=" + encodeURIComponent(msg));
-}
+function getPrice(q){ if(q==1) return 1200; if(q==2) return 2000; if(q==3) return 3200; if(q==4) return 4000; }
+function updatePrice(){ let q=document.getElementById("qty").value; document.getElementById("total").innerText="Total: "+getPrice(q)+" Rs"; }
+function order(){ let q=document.getElementById("qty").value; let p=getPrice(q); let msg="Assalam-o-Alaikum! Mujhe Salisa Perfume "+q+" Bottle chahiye. Total: "+p+" Rs. Mera Naam: , Mera Address: "; window.open("https://wa.me/92XXXXXXXXXX?text="+encodeURIComponent(msg)); }
 </script>
-
 </body>
 </html>
